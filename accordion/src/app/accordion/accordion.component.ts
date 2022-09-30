@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AccordionItem } from '../model/accordion-item';
+import { MainService } from '../service/main.service';
 
 @Component({
   selector: 'app-accordion',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccordionComponent implements OnInit {
 
-  constructor() { }
+  accordionDataList$: Observable<AccordionItem[]>;
+
+  constructor(private mainService: MainService) { }
 
   ngOnInit(): void {
+    this.accordionDataList$ = this.mainService.getData();
   }
 
 }

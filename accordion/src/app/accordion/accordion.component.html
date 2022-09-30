@@ -1,1 +1,4 @@
-<p>accordion works!</p>
+<div *ngFor="let item of accordionDataList$ | async">
+  <p>{{ item.title }}</p>
+  <p>{{ item.description }}</p>
+</div>
