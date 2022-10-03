@@ -1,0 +1,27 @@
+.accordion-title-container {
+  display: flex;
+  padding: 4px 22px;
+}
+
+.icon-container {
+  align-self: center;
+  margin-right: 12px;
+  width: 20px;
+}
+
+i {
+  color: rgb(133, 133, 133);
+}
+
+.accordion-desc-container {
+  padding: 0 22px;
+}
+
+.description {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.accordion-item-container > * {
+  border-bottom: 2px solid rgb(240, 240, 240);
+}

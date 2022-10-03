@@ -1,0 +1,15 @@
+.accordion-container {
+  width: 60vw;
+  border: 2px solid rgb(240, 240, 240);
+  border-radius: 4px;
+  padding: 0;
+  margin: 50px auto 0;
+}
+
+p {
+  margin: 0;
+}
+
+.accordion-container:last-child {
+  border-bottom: none;
+}

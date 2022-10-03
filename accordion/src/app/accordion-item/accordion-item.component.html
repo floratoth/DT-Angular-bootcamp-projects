@@ -1,1 +1,12 @@
-<p>accordion-item works!</p>
+<div class="accordion-item-container">
+  <div class="accordion-title-container">
+    <span class="icon-container">
+      <i *ngIf="!isClicked" class="fa fa-thin fa-chevron-right"></i>
+      <i *ngIf="isClicked" class="fa fa-thin fa-chevron-down"></i>
+    </span>
+    <p class="title">{{ title }}</p>
+  </div>
+  <div *ngIf="isClicked" class="accordion-desc-container">
+    <p class="description">{{ description }}</p>
+  </div>
+</div>
