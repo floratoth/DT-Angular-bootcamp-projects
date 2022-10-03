@@ -23,5 +23,9 @@ i {
 }
 
 .accordion-item-container > * {
-  border-bottom: 2px solid rgb(240, 240, 240);
+  border-bottom: 2px solid rgb(231, 231, 231);
+}
+
+.accordion-title-container:hover {
+  background-color: rgb(247, 247, 247);
 }

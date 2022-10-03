@@ -21,8 +21,11 @@ export class AccordionComponent implements OnInit {
     });
   }
 
-  onItemClicked(index: number) {
-    this.accordionDataList[index].isSeen =
-      !this.accordionDataList[index].isSeen;
+  onItemClicked(clickedIndex: number): void {
+    this.accordionDataList.map((element, elementIndex) => {
+      elementIndex === clickedIndex
+        ? (element.isSeen = !element.isSeen)
+        : (element.isSeen = false);
+    });
   }
 }
