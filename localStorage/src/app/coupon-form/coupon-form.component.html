@@ -1,5 +1,5 @@
 <div class="form-container d-flex justify-content-center align-items-center">
-  <form [formGroup]="couponForm" action="">
+  <form [formGroup]="couponForm" (ngSubmit)="onSubmit()">
     <div class="pt-4">
       <h2>Coupon Form</h2>
       <div class="d-grid col-10 mx-auto">
@@ -10,6 +10,7 @@
             id="fullName"
             class="form-control"
             formControlName="fullName"
+            [value]=""
           />
         </div>
         <div class="mb-3">
@@ -41,7 +42,7 @@
         </div>
       </div>
       <div class="d-grid col-6 mx-auto">
-        <button class="btn btn-secondary mt-3 mb-4">Submit</button>
+        <button type="submit" class="btn btn-secondary mt-3 mb-4">Submit</button>
       </div>
     </div>
   </form>
