@@ -16,9 +16,9 @@ export class CouponFormComponent implements OnInit {
 
   constructor(fb: FormBuilder) {
     this.couponForm = fb.group({
-      fullName: ['', Validators.required],
-      email: ['', Validators.required],
-      phoneNumber: ['', Validators.pattern(/xy/)],
+      fullName: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', [Validators.minLength(7)]],
       couponCode: ['', Validators.pattern(/s345/)],
     });
   }
@@ -46,7 +46,7 @@ export class CouponFormComponent implements OnInit {
     return this.couponForm.get('couponCode') as FormControl;
   }
 
-  setLocalStorage(from: string, to: string): void {
+  setLocalStorageItem(from: string, to: string): void {
     localStorage.setItem(from, to);
   }
 
@@ -64,7 +64,6 @@ export class CouponFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.couponForm.value);
     let formDataList = [
       { key: 'fullName', value: this.fullName.value },
       { key: 'email', value: this.email.value },
@@ -72,7 +71,7 @@ export class CouponFormComponent implements OnInit {
       { key: 'couponCode', value: this.couponCode.value },
     ];
     formDataList.map((item) => {
-      this.setLocalStorage(item.key, JSON.stringify(item.value));
+      this.setLocalStorageItem(item.key, JSON.stringify(item.value));
     });
   }
 }
